@@ -1,0 +1,287 @@
+/* reset CSS*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url('../img/fundo_matrix.jpg');
+    background-size: auto 100vh;
+    font-family: 'Press Start 2P', cursive;
+    color: whitesmoke;
+    height: 100vh;
+    font-size: 10px;   
+    background-attachment: fixed;
+    background-repeat: round;
+  }
+  
+  /* Se a tela tiver pelo menos 400px vai carregar estes estilos*/
+  @media (min-width: 400px) {
+    body {
+      font-size: 14px;
+    }
+  }
+
+  /* breakpoint - Se estiver entre 400px e 600px*/
+  @media (min-width: 600px) {
+    body {
+      font-size: 18px;
+    }
+  }
+
+  /* breakpoint - Se estiver acima de 600px*/
+  @media (min-width: 1200px) {
+    body {
+      font-size: 20px;
+    }
+  }
+
+  header {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  
+  .menu {
+    background-color: whitesmoke;
+    position: fixed;
+    width: 100vw;
+    top: 0;
+    z-index: 1;
+    border: 1px solid green;
+  }
+  
+  .menu ul {
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  .menu li {
+    list-style: none;    
+  }
+
+  .menu a {    
+    display: block;
+    padding: 10px 20px;
+    transition: background-color 1s, color, 0.5s;
+  }
+
+  .menu a:hover {
+    background-color: green;
+    color: whitesmoke;    
+    border-radius: 2%;
+    opacity: 0.5;
+  }
+  
+  a {
+    color:green;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+
+  .titulo {
+    transform: scale(0.2) translateY(50Vh);
+    opacity: 0;
+    animation: 1s linear 0.5s animacaoTilulo forwards;
+  }
+  
+  @keyframes animacaoTilulo {
+   
+    100% {
+      transform: scale(1) translateY(0);
+      opacity: 1;
+    }
+  }
+
+  .site-subtitle,
+  .site-title {
+    color: white;
+    text-align: center;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #000;
+  }
+
+  .site-title {
+    font-size: 5em;
+    font-family: 'Amiri'/*, cursive*/;
+    padding: 0.3em;
+    border: 10px ridge rgba(73, 247, 166, 0.5);
+    border-radius: 10px;
+  }
+
+  @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
+    .site-title {
+      -webkit-backdrop-filter: blur(10px);
+      backdrop-filter: blur(10px);
+      background-color: rgba(63, 202, 137, 0.1);  
+    }
+  }
+  
+  .site-subtitle {
+    font-style: italic;    
+    font-family: 'Amiri';
+    font-size: 2em;
+    font-weight: lighter;
+    line-height: 1.8em;
+    padding: 0.3em;
+    /*border: 1px solid black;*/
+    border-radius: 10px;
+  }
+
+  @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
+    .site-subtitle {
+      -webkit-backdrop-filter: blur(10px);
+      backdrop-filter: blur(10px);
+      background-color: rgba(73, 247, 166, 0.1);  
+    }
+  }
+
+  .portfolio {    
+    padding: 2em;
+    min-height: 100vh;
+  }
+
+  .contato {
+    padding: 2em;
+    min-height: 50vh;
+  }
+
+  .contato h2,
+  .portfolio h2 {
+    font-family: 'Press Start 2P', cursive;
+    color: whitesmoke;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    font-size: 1em;
+    padding: 0.3em;
+    border: 1px solid white;
+    border-radius: 10px;
+  }
+
+  @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
+    .contato h2,
+  .portfolio h2 {
+      -webkit-backdrop-filter: blur(10px);
+      backdrop-filter: blur(10px);
+      background-color: rgba(73, 247, 166, 0.2);  
+    }
+  }
+
+  .portfolio .grid {
+    display: grid;
+    gap: 2em;    
+  }
+
+  @media (min-width: 560px) {
+    .portfolio .grid {
+    grid-template-columns: repeat(2 , 240px);
+    justify-content: center;
+    }
+  }
+
+  @media (min-width: 880px) {
+    .portfolio .grid {
+    grid-template-columns: repeat(3 , 240px);
+    align-content: center;
+    justify-content: center;
+    height: calc(100vh - 4em - 48px - 1.5em);    
+    }
+  }
+  .portfolio figure {
+    text-align: center;
+  }
+
+  .img-portfolio {
+    height: 180px;
+    width: 240px;
+    object-fit: cover;
+    object-position: left bottom;
+    border-radius: 5%;
+    filter: brightness(50%);
+    transition: transform 0.5s;
+    border: 10px ridge rgba(73, 247, 166, 0.8);    
+  }
+
+  .img-portfolio:hover {
+    transform: scale(1.2) rotate3d(0,0,1,360deg) translateY(-2.3Vh);
+    filter: brightness(100%);
+  }
+
+  .contato .icons {
+    text-align: center;
+    border: 1px solid rgba(73, 247, 166, 0.2);
+    border-radius: 10px;
+    padding: 1em;
+  }
+
+  @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
+    .contato .icons {
+      -webkit-backdrop-filter: blur(10px);
+      backdrop-filter: blur(10px);
+      background-color: rgba(73, 247, 166, 0.2);  
+    }
+  }
+
+  .contato a {
+    color: whitesmoke;
+    font-size: 3em;
+    transition: text-shadow 0.2s;    
+  }
+
+  .contato a:active,
+  .contato a:hover {
+    text-decoration: none;
+    text-shadow: 0px 0px 30px rgba(73, 247, 166, 0.8);
+  }
+
+  .footer {
+    color: whitesmoke;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.70em;
+    text-align: center;    
+  }
+
+  @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
+    .footer {
+      -webkit-backdrop-filter: blur(10px);
+      backdrop-filter: blur(10px);
+      background-color: rgba(73, 247, 166, 0.2);  
+    }
+  }
+
+  hr {
+    width: 99%;
+    border: 1px ridge rgba(73, 247, 166, 0.5);
+    border-start-end-radius: 1px;    
+    display: block;
+    unicode-bidi: isolate;
+    margin-block-start: 0.5em;
+    margin-block-end: 0.5em;
+    margin-inline-start: auto;
+    margin-inline-end: auto;
+    overflow: hidden;
+  }
+
+  figcaption {    
+    padding: 0.2em;
+    border-radius: 0.2em;
+    border: 1px solid white;
+  }
+
+  @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
+    figcaption {
+      -webkit-backdrop-filter: blur(10px);
+      backdrop-filter: blur(10px);
+      background-color: rgba(73, 247, 166, 0.2);  
+    }
+  }
+
+  .grid a {
+    color: whitesmoke;
+  }
